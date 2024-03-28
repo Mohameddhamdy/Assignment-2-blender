@@ -1,0 +1,44 @@
+ import bpy
+
+# Create first cube
+bpy.ops.mesh.primitive_cube_add(size=1)
+cube1 = bpy.context.object
+cube1.location = (0, 0, 0)
+
+# Create second cube
+bpy.ops.mesh.primitive_cube_add(size=1)
+cube2 = bpy.context.object
+cube2.location = (2, 0, 0)
+
+# Set animation keyframes
+cube1.rotation_euler = (4, 4, 0)
+cube1.scale = (1, 1, 1)
+cube1.location = (0, 0, 0)
+cube1.keyframe_insert(data_path='rotation_euler', frame=1)
+cube1.keyframe_insert(data_path='scale', frame=1)
+cube1.keyframe_insert(data_path='location', frame=1)
+
+cube2.rotation_euler = (4, 4, 0)
+cube2.scale = (1, 1, 1)
+cube2.location = (2, 0, 0)
+cube2.keyframe_insert(data_path='rotation_euler', frame=1)
+cube2.keyframe_insert(data_path='scale', frame=1)
+cube2.keyframe_insert(data_path='location', frame=1)
+
+cube1.location = (-4, 0, 0)
+cube1.keyframe_insert(data_path='location', frame=50)
+
+cube2.location = (4, 0, 0)
+cube2.keyframe_insert(data_path='location', frame=50)
+
+cube1.rotation_euler = (0, 0, 0)
+cube1.scale = (4, 4,4)
+cube1.keyframe_insert(data_path='rotation_euler', frame=100)
+cube1.keyframe_insert(data_path='scale', frame=100)
+cube1.keyframe_insert(data_path='location', frame=100)
+
+cube2.rotation_euler = (0, 0, 0)
+cube2.scale = (4, 4,4)
+cube2.keyframe_insert(data_path='rotation_euler', frame=100)
+cube2.keyframe_insert(data_path='scale', frame=100)
+cube2.keyframe_insert(data_path='location', frame=100)
